@@ -23,7 +23,7 @@ class Solution {
 
         Queue<TreeNode>q=new LinkedList<>();
         q.add(root);
-        while(q.size()>0)
+        while(!q.isEmpty())
         {
             List<Integer>arr=new ArrayList<>();
             int n=q.size();
