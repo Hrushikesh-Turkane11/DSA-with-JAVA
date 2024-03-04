@@ -21,10 +21,12 @@ class Solution {
             j++;
         }
 
-        for(int i=0;i<arr.length;i++)
-        {
-            arr[i]=nums[i];
-        }
+        // for(int i=0;i<arr.length;i++)
+        // {
+        //     arr[i]=nums[i];
+        // }
+
+        System.arraycopy(nums,0,arr,0,arr.length);
 
     }
 }
