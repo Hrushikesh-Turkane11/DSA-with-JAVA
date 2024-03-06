@@ -1,31 +1,28 @@
 class Solution {
-    public static boolean isVowel(char s){
-        s=Character.toLowerCase(s);
-        if(s=='a' ||  s=='e'|| s=='i'|| s=='o'|| s=='u') return true;
-        return false;
-    }
     public String reverseVowels(String s) {
-        char str[]=s.toCharArray();
-        int i=0;
-        int j=s.length()-1;
-        String ans="";
-        while(i<j){
-            if(isVowel(str[i]) && isVowel(str[j]))
-                {
-                char a=str[i];
-                str[i]=str[j];
-                str[j]=a;
-                i++;
+        List<Character>chr=new ArrayList<>();
+        
+        for(int i=0;i<s.length();i++)
+        {
+            char a=s.charAt(i);
+            if(a=='a' ||a=='e' ||a=='i' ||a=='o' ||a=='u' ||a=='A' ||a=='E' ||a=='I' ||a=='O' ||a=='U')
+            {
+                chr.add(a);
+            }
+        }
+        StringBuilder sb=new StringBuilder();
+        int j=chr.size()-1;
+        for(int i=0;i<s.length();i++)
+        {
+            char a=s.charAt(i);
+            if(a=='a' ||a=='e' ||a=='i' ||a=='o' ||a=='u' ||a=='A' ||a=='E' ||a=='I' ||a=='O' ||a=='U')
+            {
+                 sb.append(chr.get(j));
                 j--;
-            }
-            else if(!isVowel(str[i])){
-                i++;
             }else{
-                   j--;
-            }  
-               
+                sb.append(a);
             }
-        return String.valueOf(str);
-       
+        }
+        return sb.toString();
     }
 }
